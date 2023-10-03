@@ -1,0 +1,133 @@
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-family: "Roboto"
+    font-weight: 400
+    font-size: 16px
+    color: #777777
+    letter-spacing: 2px
+    padding: 50px
+    background-color:white
+
+.container
+    background: color #f7f7f7
+.header
+    position: relative
+    height: 95vh
+    background: linear-gradient(90deg, rgba(186, 133, 84, 0.70) 0.03%, rgba(1, 1, 1, 0.70) 99.94%), url("..\\img\\pexels-mehmet-turgut-kirkgoz-5865634 2 (1).jpg") center/cover no-repeat
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%)
+    &__logo
+        position: absolute
+        left: 50px
+        top:50px
+        height: 70px
+        width: 56px
+    &__box
+        position: absolute
+        top:50%
+        left:50%
+        transform: translate(-50%, -50%)
+        width:100%
+        text-align: center
+
+.title-first
+    color: #FFFFFF     
+    font-family: Lato,sans-serif
+    &__main
+        
+        letter-spacing: 10px
+        text-transform: uppercase
+
+        display: block
+        line-height:60px
+        font-size: 50px
+        font-weight: 800
+        margin-bottom: 10px
+        animation-name: LeftRight
+        animation-duration: 1s
+        animation-delay: .5s
+
+    &__secondary
+        
+        display: block
+        font-size: 40px
+        font-weight: 100
+        letter-spacing: 5px
+        animation-name: RightotLeft
+        animation-duration: 1s
+        animation-delay: .5s
+    @keyframes LeftRight
+        0%
+            opacity: 0
+            transform: translateX(-100px)
+            
+        80%
+             transform: translateX(30px)
+
+        100%
+            opacity: 1
+            transform: translateX(0px)
+
+    @keyframes RightotLeft
+        0%
+            opacity: 0
+            transform: translateX(100px)
+            
+        80%
+            transform: translateX(-30px)
+
+        100%
+            opacity: 1
+            transform: translateX(0px)
+
+.btn__animated
+    animation: BtnTop .5s ease-out .7s
+    animation-fill-mode: backwards
+.btn
+    &:link, &:visited
+        // animation: BtnTop .5s ease-out .7s
+        text-decoration: none
+        border-radius: 50px
+        color: #777
+        padding: 15px 40px
+        background: white 
+        display: inline-block
+        margin-top: 65px
+        transition: all .5s
+        position: relative
+        &:active
+            transform: translateY(-2px)
+        &:hover::after
+            opacity: 0
+            transform: translateY(-4px) scaleX(1.5) scaleY(1.7)
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5)
+            
+        
+
+        &::after
+            content: ""
+            background: white
+            width: 100%
+            height: 100%
+            border-radius: 50px
+            display: inline-block
+            position: absolute
+            left: 0
+            top: 0
+            z-index:  -1
+            transition: all .7s
+        &__animated
+            animation: BtnTop .5s ease-out .7s
+
+            
+    
+    @keyframes BtnTop
+        0%
+            opacity: 0
+            transform: translateY(100px)
+        100%
+            opacity: 1
+            transform: translateY(0px)
